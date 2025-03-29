@@ -21,11 +21,9 @@ class SurahDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_surah_details)
 
-        sharedPreferences = getSharedPreferences("QuranData", Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences("QuranData", MODE_PRIVATE)
 
         val surahNumber = intent.getIntExtra("surah_number", 0)
-
-        // **Retrieve & Filter Surah from SharedPreferences**
         val surahList = getSurahListFromPrefs()
         val selectedSurah = surahList.find { it.number == surahNumber }
 
@@ -36,7 +34,7 @@ class SurahDetailsActivity : AppCompatActivity() {
     private fun setupRecyclerView(ayahs: List<Ayah>) {
         recyclerView = findViewById(R.id.recyclerViewDetails)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = AyahAdapter( ayahs)
+        val adapter = AyahAdapter(this,ayahs)
         recyclerView.adapter = adapter
     }
 

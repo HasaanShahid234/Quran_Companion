@@ -20,3 +20,7 @@ data class Ayah(
     val audio: String,        // Audio URL
     val translation: String   // English translation
 )
+data class BookmarkedAyah(
+    val surahNumber: Int,
+    val ayahNumber: Int
+)

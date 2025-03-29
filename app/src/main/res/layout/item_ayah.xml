@@ -8,15 +8,30 @@
     android:background="@color/white"
     >
 
-    <!-- Ayah Number -->
-    <TextView
-        android:id="@+id/tvAyahNumber"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ayah Number"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"/>
+        android:orientation="horizontal"
+        >
+        <!-- Ayah Number -->
+        <TextView
+            android:id="@+id/tvAyahNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ayah Number"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+        <ImageView
+            android:id="@+id/btnBookmark"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_bookmark_border_24"
+            android:layout_marginEnd="16dp"
+           />
+    </LinearLayout>
+
 
     <!-- Arabic Text -->
     <TextView

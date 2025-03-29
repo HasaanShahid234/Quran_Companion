@@ -1,11 +1,16 @@
 package com.example.qurancompanion.ui
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
@@ -27,15 +32,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var audioPlayer: AudioPlayer
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var cardView: LinearLayout
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.recyclerView)
+        cardView = findViewById(R.id.bookmarkContainer)
         recyclerView.layoutManager = LinearLayoutManager(this)
         audioPlayer = AudioPlayer()
         sharedPreferences = getSharedPreferences("QuranData", MODE_PRIVATE)
+
+        cardView.setOnClickListener {
+            startActivity(Intent(this, BookmarkActivity::class.java))
+        }
 
         viewModel.fetchQuran()
 
