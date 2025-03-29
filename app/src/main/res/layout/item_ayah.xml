@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@color/white"
+    >
+
+    <!-- Ayah Number -->
+    <TextView
+        android:id="@+id/tvAyahNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayah Number"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <!-- Arabic Text -->
+    <TextView
+        android:id="@+id/tvArabicText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Arabic Text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/black"
+        android:paddingTop="4dp"/>
+
+    <!-- English Translation -->
+    <TextView
+        android:id="@+id/tvTranslation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="English Translation"
+        android:textSize="16sp"
+        android:paddingTop="6dp"
+        android:visibility="gone"
+        android:textColor="@android:color/darker_gray"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ADADAD"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        />
+
+</LinearLayout>
